@@ -1,0 +1,21 @@
+jwt:
+  secret: ${JWT_SECRET:3SiRSHaXtsxyBTG4GPtybzU38DHQgeBIN7LLRr05wvHPstz8nHyYOicCkQ892YA}
+spring:
+  datasource:
+    platform: postgresql
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:spookify}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:pcmeP100@}
+  h2:
+    console:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        cache:
+          redisson:
+            config: redisson-prod.yaml
+server:
+  port: ${PORT:8080}
